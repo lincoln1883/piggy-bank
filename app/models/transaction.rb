@@ -2,6 +2,6 @@ class Transaction < ApplicationRecord
   validates_presence_of :name
   validates :amount, presence: true, numericality: { greater_than: 0 }
 
-  belongs_to :category
+  has_and_belongs_to_many :category
   belongs_to :user
 end
