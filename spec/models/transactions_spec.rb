@@ -12,4 +12,3 @@ RSpec.describe Transaction, type: :model do
     end
   end
 end
-
