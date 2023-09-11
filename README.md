@@ -55,7 +55,11 @@ The Piggy Bank project is about building a mobile web application where you can 
 ### Key Features <a name="key-features"></a>
 
 - [ ] Model View and controllers.
-
+- [ ] Add authorization rules.
+- [ ] Creating a data model.
+- [ ] Validations and Model specs.
+- [ ] Processing data in models.
+- [ ] Add Devise.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,7 +84,7 @@ The Piggy Bank project is about building a mobile web application where you can 
   Clone this repository to your desired folder:
 ```sh
   cd folder
-  git clone git@github.com:lincoln1883/hello-rails.git
+  git clone git@github.com:lincoln1883/piggy-bank.git
 ```
 ### Install
 
@@ -118,19 +122,12 @@ The Piggy Bank project is about building a mobile web application where you can 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-- [ ] Add authorization rules.
-- [ ] Add API endpoints.
-- [ ] API documentation.
-- [ ] Creating a data model.
-- [ ] Validations and Model specs.
-- [ ] Processing data in models.
 - [ ] Controllers specs.
 - [ ] Views.
 - [ ] Forms.
 - [ ] Integration specs for Views and fixing n+1 problems.
-- [ ] Add Devise.
-- 
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
