@@ -1,0 +1,11 @@
+<div class="pb-12">
+  <div class="flex justify-evenly">
+    <h2 class="text-center font-serif  uppercase">Transactions for <%= @category.name %></h2>
+    <p>$<%= @category.total_amount %></p>
+  </div>
+  <div id="card" class="">
+    <!-- container for all cards -->
+    <%= render 'transactions/transaction', collection: @category.transactions %>
+    <%= link_to "Add a New Transaction", new_category_transaction_path(category_id: @category.id) %>
+  </div>
+</div>
