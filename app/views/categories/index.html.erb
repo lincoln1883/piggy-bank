@@ -1,4 +1,4 @@
-<div class="pb-12">
+<div class="h-screen">
 <h1 class="text-center">Welcome, <%= current_user.name %>!</h1>
 <!-- List categories here -->
 <% @categories.each do |category| %>
@@ -23,6 +23,9 @@
       <p>
     </div><!--/ card-->
   </div><!--/ flex-->
-    <%= link_to "View Transactions", category_transactions_path(category) %>
+    <%= link_to "View Transactions", category_transactions_path(category), class: 'actions group relative w-25 flex
+         justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
+         rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
+         focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500'%>
 <% end %>
 </div>
