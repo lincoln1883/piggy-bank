@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>PiggyBank</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,8 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="h-screen">
+  <%= render 'shared/navbar' %>
+    <main class="container mx-auto mt-8 px-5 flex justify-center flex-col">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
       <%= yield %>
     </main>
   </body>
