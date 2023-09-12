@@ -1,0 +1,13 @@
+<h1 class="text-center">Categories index</h1>
+
+<!-- List categories here -->
+<% @categories.each do |category| %>
+  <div class="flex justify-between items-center ">
+    <%= image_tag category.icon, alt: 'Category Icon', class: 'img-preview h-50' if category.icon.present?%>
+    <h2><%= category.name %></h2>
+    <p>Total Amount: <%= category.total_amount %></p>
+    <%#= link_to "View Transactions", category_transactions_path(category) %>
+  </div>
+<% end %>
+
+<%= link_to "Add a New Category", new_category_path %>
