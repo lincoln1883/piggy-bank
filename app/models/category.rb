@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
-  validates :name, presence: true
-  validates :icon, presence: true
+  validates_presence_of :name
+  validates_presence_of :icon
 
   has_many :transactions
   belongs_to :user
