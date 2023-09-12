@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'categories#index'
-  resources :categories
+  resources :categories do
+    resources :transactions
+  end
   get "/", to: 'home#index'
 end
