@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
   def index
     @category = Category.find(params[:category_id])
-    @transactions = @category.transactions.order(created_at: :desc)
+    @transactions = @category.transactions.order(created_at: :desc).limit(3)
   end
 
   def show
@@ -16,15 +16,16 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @category = Category.find(params[:category_id])
     @transaction = @category.transactions.new(transaction_params)
     @transaction.user_id = current_user.id
 
-    if @transaction.save
-      redirect_to category_transactions_path(@category), notice: 'Transaction created successfully.'
-    else
-      render :new
+    respond_to do |format|
+      if @transaction.save
+        format.html { redirect_to categories_path, notice: 'Transaction created successfully.' }
+      else
+        format.html { render action: 'new', unprocessable_entity: @transaction }
+      end
     end
   end
 
