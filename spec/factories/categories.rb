@@ -12,10 +12,9 @@ FactoryBot.define do
       end
 
       after(:create) do |category, evaluator|
-        transactions = create_list(:transaction, evaluator.transactions_count, category: category, user: category.user)
+        transactions = create_list(:transaction, evaluator.transactions_count, category:, user: category.user)
         category.update(total_amount: transactions.sum(&:amount))
       end
     end
   end
 end
-

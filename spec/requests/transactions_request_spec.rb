@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Transactions', type: :request do
   let(:user) { create(:user) }
-  let(:categories) { create_list(:category, 3, user: user) }
+  let(:categories) { create_list(:category, 3, user:) }
 
   before do
     sign_in user

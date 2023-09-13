@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Transaction, type: :model do
   it 'is valid with a name, category_id, and a positive amount' do
-    category = FactoryBot.create(:category, name: 'transit', icon: 'https://picsum.photos/200') # Create a valid category
+    category = FactoryBot.create(:category, name: 'transit', icon: 'https://picsum.photos/200')
     transaction = FactoryBot.build(:transaction, name: 'Taxi', category_id: category.id, amount: 20)
     expect(transaction).to be_valid
   end
