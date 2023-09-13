@@ -1,13 +1,8 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @category = Category.find(params[:category_id])
+    @category = Category.includes(:user, :transactions).find(params[:category_id])
     @transactions = @category.transactions.order(created_at: :desc).limit(3)
-  end
-
-  def show
-    @category = Category.find(params[:category_])
-    @transaction = Transaction.find(params[:id]).where(:name, :amount)
   end
 
   def new
@@ -20,12 +15,10 @@ class TransactionsController < ApplicationController
     @transaction = @category.transactions.new(transaction_params)
     @transaction.user_id = current_user.id
 
-    respond_to do |format|
-      if @transaction.save
-        format.html { redirect_to categories_path, notice: 'Transaction created successfully.' }
-      else
-        format.html { render action: 'new', unprocessable_entity: @transaction }
-      end
+    if @transaction.save!
+      redirect_to categories_path, notice: 'Transaction created successfully.'
+    else
+      render action: 'new', unprocessable_entity: @transaction, notice: 'Transaction not created.'
     end
   end
 

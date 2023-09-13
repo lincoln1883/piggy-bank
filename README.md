@@ -60,6 +60,11 @@ The Piggy Bank project is about building a mobile web application where you can 
 - [ ] Validations and Model specs.
 - [ ] Processing data in models.
 - [ ] Add Devise.
+- [ ] Controllers specs.
+- [ ] Views.
+- [ ] Forms.
+- [ ] Integration specs for Views and fixing n+1 problems.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,11 +127,7 @@ The Piggy Bank project is about building a mobile web application where you can 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-- [ ] Controllers specs.
-- [ ] Views.
-- [ ] Forms.
-- [ ] Integration specs for Views and fixing n+1 problems.
-
+- [ ] Add Edit and Delete functionality
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
