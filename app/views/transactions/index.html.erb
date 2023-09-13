@@ -3,15 +3,15 @@
     <h2 class="text-center font-serif uppercase"><%= @category.name %></h2>
     <p>$<%= @category.total_amount %>0 cents</p>
   </div>
-    <!-- container for all cards -->
+  <!-- container for all cards -->
   <div id="card" class="flex flex-col items-center mt-8 mb-4">
     <%= render 'transactions/transaction', collection: @category.transactions %>
     <% if can? :manage, @category %>
-    <%= link_to "Add a New Transaction", new_category_transaction_path(category_id: @category.id), class: 'actions group relative w-50 flex
+      <%= link_to "Add a New Transaction", new_category_transaction_path(category_id: @category.id), class: 'actions group relative w-50 flex
          justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
          rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
          focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500'%>
-      <% end %>
+    <% end %>
     <%= link_to "Back", categories_path %>
   </div>
 </div>

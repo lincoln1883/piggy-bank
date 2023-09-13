@@ -1,6 +1,6 @@
 <h1 class="text-center font-semibold">Add a New Transaction</h1>
 <div class="flex flex-col justify-start items-center h-screen">
-  <%= form_with(model: [@category, @transaction], url: category_transactions_path(@category.id)) do |f| %>
+  <%= form_with(model: [@category, @transaction], url: category_transactions_path(@category)) do |f| %>
     <!-- Name field -->
     <div class="form-group">
       <%= f.label :name %><br>
