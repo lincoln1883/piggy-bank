@@ -1,11 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @categories = Category.includes(:user).all
-  end
-
-  def show
-    @category = Category.find(params[:id])
+    @categories = Category.includes(:user, :transactions).all
   end
 
   def new
