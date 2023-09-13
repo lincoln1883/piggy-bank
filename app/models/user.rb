@@ -6,4 +6,10 @@ class User < ApplicationRecord
   validates_presence_of :name
   has_many :categories
   has_many :transactions
+
+  enum role: { admin: 'admin' }
+
+  def admin?
+    role == 'admin'
+  end
 end
