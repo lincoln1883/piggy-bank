@@ -1,0 +1,37 @@
+<div class="h-screen">
+<h1 class="text-center">Welcome, <%= current_user.name %>!</h1>
+<!-- List categories here -->
+<% @categories.each do |category| %>
+  <div class="flex flex-col">
+    <!-- card -->
+    <div v-for="card in cards" class="flex flex-row overflow-hidden
+                                        bg-white rounded-lg shadow-xl mt-4 w-100 mx-2">
+      <!-- media -->
+      <div class="h-full w-auto">
+        <%= image_tag category.icon, alt: 'Category Icon', class: "inset-0 w-full object-cover object-center" if category.icon.present?%>
+      </div>
+      <!-- content -->
+      <div class="flex flex-col justify-evenly w-full py-4 px-6 text-gray-800">
+        <div class="flex justify-between mt-8">
+          <p class="font-semibold text-lg leading-tight truncate"><%= category.name %></p>
+          <p class="font-semibold text-lg">$ <%= category.total_amount %></p>
+        </div>
+        <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+          <%= time_ago_in_words(category.created_at) %>
+        </p>
+      </div>
+      <p>
+    </div>
+  </div>
+    <% if can? :read, @category %>
+    <%= link_to "View Transactions", category_transactions_path(category), class: 'actions group relative w-25 flex
+         justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
+         rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
+         focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500'%>
+    <% end %>
+  <% end %>
+  <%= link_to "Add a New Category", new_category_path,class: 'actions group relative flex
+         justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
+         rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
+         focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500' %>
+</div>

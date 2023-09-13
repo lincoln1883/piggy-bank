@@ -1,0 +1,26 @@
+<h1 class="text-center">Add a New Category</h1>
+<div class="flex flex-col justify-start items-center h-screen">
+  <%= form_with(model:[@category], url: categories_path) do |f| %>
+    <!-- Name field -->
+    <div class="flex flex-col justify-center items-center">
+      <div class="form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+      </div>
+
+      <!-- Icon field -->
+      <div class="form-group">
+      <%= f.label :icon %><br>
+      <%= f.text_field :icon %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Save", class: 'actions group relative w-full flex
+            justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
+            rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
+            focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500' %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "Back", categories_path %>
+</div>

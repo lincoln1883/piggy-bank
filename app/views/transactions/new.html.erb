@@ -1,0 +1,33 @@
+<h1 class="text-center font-semibold">Add a New Transaction</h1>
+<div class="flex flex-col justify-start items-center h-screen">
+  <%= form_with(model: [@category, @transaction], url: category_transactions_path(@category.id)) do |f| %>
+    <!-- Name field -->
+    <div class="form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <!-- Amount field -->
+    <div class="form-group">
+      <%= f.label :amount %><br>
+      <%= f.number_field :amount %>
+    </div>
+    <div class="form-group">
+      <%= f.hidden_field :category_id, value: @category.id %>
+    </div>
+    <!-- Category dropdown -->
+    <div class="form-group">
+      <%= f.label :category_id %><br>
+      <%= f.collection_select(:category_id, Category.all, :id, :name ,{ prompt: 'Choose a Category'},{ class: 'form-select w-full'}) %>
+    </div>
+    <div class="flex justify-center items-center">
+      <%= f.submit 'Create Transaction', class: 'actions group relative w-full flex
+          justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
+          rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
+          focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500'%>
+    </div>
+  <% end %>
+  <%= link_to "Back", categories_path%>
+</div>
+
+
