@@ -15,7 +15,7 @@ RSpec.describe 'CategoriesController', type: :request do
     end
 
     it 'displays categories' do
-      category # Create a category to ensure it's displayed
+      category
       get categories_path
       expect(response).to have_http_status(:success)
       expect(response.body).to include(category.name)
@@ -24,7 +24,7 @@ RSpec.describe 'CategoriesController', type: :request do
 
   describe 'GET /categories/new' do
     it 'renders the new template' do
-      sign_in(user) # Sign in the user
+      sign_in(user)
       get new_category_path
       expect(response).to render_template(:new)
     end
@@ -32,8 +32,8 @@ RSpec.describe 'CategoriesController', type: :request do
 
   describe 'POST /categories' do
     it 'creates a new category' do
-      sign_in(user) # Sign in the user
-      category_params = attributes_for(:category) # You can use FactoryBot to generate category attributes
+      sign_in(user)
+      category_params = attributes_for(:category)
       expect do
         post categories_path, params: { category: category_params }
       end.to change(Category, :count).by(1)
@@ -46,9 +46,9 @@ RSpec.describe 'CategoriesController', type: :request do
     end
 
     it 'handles invalid category creation' do
-      sign_in(user) # Sign in the user
+      sign_in(user)
       expect do
-        post categories_path, params: { category: { name: '' } } # Invalid category params
+        post categories_path, params: { category: { name: '' } }
       end.not_to change(Category, :count)
 
       expect(response).to have_http_status(:success)

@@ -6,7 +6,6 @@ RSpec.describe 'transactions/index.html.erb', type: :view do
 
   before(:each) do
     @category = category
-    # Assign an array of transactions to the @transactions variable
     @transactions = [
       create(:transaction, name: 'Transaction 1', category:),
       create(:transaction, name: 'Transaction 2', category:)
