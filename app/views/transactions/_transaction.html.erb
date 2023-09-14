@@ -1,7 +1,7 @@
 <% @transactions.each do |transaction| %>
   <div class="flex flex-col">
     <!-- card -->
-    <div v-for="card in cards" class="flex flex-row overflow-hidden bg-white
+    <div class="flex flex-row overflow-hidden bg-white
       rounded-lg shadow-xl mt-4 w-100 mx-2" id="transaction_<%= transaction.id %>">
       <!-- media -->
       <div class="h-full w-auto">

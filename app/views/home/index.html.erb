@@ -1,2 +1,15 @@
-<h1 class="text-center font-medium uppercase text-4xl">Piggy Bank App</h1>
-<p class="text-center font-semibold">Login or sign up from the dropdown menu</p>
+<div class="flex flex-col justify-evenly px-7 items-center h-screen gap-4">
+  <h1 class="text-center font-bold uppercase italic text-4xl">Piggy Bank App</h1>
+  <div class="flex flex-col w-full">
+    <% unless user_signed_in? %>
+      <div class="flex">
+        <%= link_to 'Log In', user_session_path, class: "bg-indigo-900 rounded-lg shadow text-center
+        text-white text-base font-semibold w-full py-3 mt-9" %>
+      </div>
+      <div class="flex">
+        <%= link_to 'Sign Up', new_user_registration_path, class: "border border-indigo-900 rounded-lg  text-center
+        text-indigo-900 bg-white text-base font-semibold w-full py-3 mt-9" %>
+      </div>
+    <% end %>
+  </div>
+</div>
