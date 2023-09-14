@@ -1,51 +1,55 @@
-<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign Up</h2>
-
-<div class="mx-auto rounded-lg">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name, autofocus: true, autocomplete: 'name', placeholder: 'Enter your name', class: "appearance-none rounded-none
-         relative block w-full px-3 py-2 border border-gray-300
-         text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500
-         focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-start sm:py-12">
+  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+    <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+      <div class="max-w-md mx-auto">
+        <div>
+          <h2 class="text-2xl text-center font-semibold">Sign Up</h2>
+        </div>
+        <div class="divide-y divide-gray-200">
+          <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <div class="relative mt-4">
+                <%= f.label :name, class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
+              peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5
+              peer-focus:text-gray-600 peer-focus:text-sm' %><br>
+                <%= f.text_field :name, autofocus: true, autocomplete: 'name', placeholder: 'Enter your name', class: "peer placeholder-transparent
+               h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" %>
+              </div>
+              <div class="relative mt-4">
+                <%= f.label :email, class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
+              peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5
+              peer-focus:text-gray-600 peer-focus:text-sm' %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter your email', class: "peer placeholder-transparent
+               h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" %>
+              </div>
+              <div class="relative mt-4">
+                <%= f.label :password, class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
+              peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5
+              peer-focus:text-gray-600 peer-focus:text-sm' %>
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Enter your password', class: "peer placeholder-transparent
+              h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" %>
+              </div>
+              <div class="relative mt-4">
+                <%= f.label :password_confirmation, class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
+              peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5
+              peer-focus:text-gray-600 peer-focus:text-sm' %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Re-enter your password', class: "peer placeholder-transparent
+              h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"%>
+              </div>
+              <div class="relative">
+                <%= f.submit "Sign up", class: 'border border-indigo-900 rounded-lg  text-center  text-indigo-900 bg-white text-base font-semibold w-full py-3 mt-9' %>
+              </div>
+            <% end %>
+            <div class="relative mt-4">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter your email', class: "appearance-none rounded-none
-         relative block w-full px-3 py-2 border border-gray-300
-         text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500
-         focus:border-indigo-500 focus:z-10 sm:text-sm" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Enter your password', class: "appearance-none rounded-none
-         relative block w-full px-3 py-2 border border-gray-300
-         text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500
-         focus:border-indigo-500 focus:z-10 sm:text-sm" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Re-enter your password', class: "appearance-none rounded-none
-         relative block w-full px-3 py-2 border border-gray-300
-         text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500
-         focus:border-indigo-500 focus:z-10 sm:text-sm"%>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up", class: 'actions group relative w-full flex
-         justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
-         rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
-         focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500'  %>
-      </div>
-    <% end %>
-  <%= render "devise/shared/links" %>
+    </div>
+  </div>
 </div>
-
-

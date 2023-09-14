@@ -10,6 +10,8 @@
     - [🛠 Built With](#built-with)
         - [Tech Stack](#tech-stack)
         - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [📹 Video Presentation ](#-video-presentation-)
 - [💻 Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -65,9 +67,14 @@ The Piggy Bank project is about building a mobile web application where you can 
 - [ ] Forms.
 - [ ] Integration specs for Views and fixing n+1 problems.
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- LIVE DEMO -->
 
+### Live Demo <a name = "live-demo"></a>
+[Piggy Bank](https://piggycoin.onrender.com)
+
+### Video Presentation <a name = "video-Presentation"></a>
+[Presentation](https://www.loom.com/share/cc953017d78c41049819a9b6e8b02c44?sid=71dcf0c0-cf5a-45b5-aecb-850581679ddd)
 ## 💻 Getting Started <a name="getting-started"></a>
 
   To get a local copy up and running, follow these steps.
@@ -147,7 +154,7 @@ Feel free to check the [issues page](https://github.com/lincoln1883/blog-app/iss
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Thank you Microverse.
+- Original design idea by Gregoire Vella on Behance.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

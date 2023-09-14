@@ -1,33 +1,57 @@
-<h1 class="text-center font-semibold">Add a New Transaction</h1>
-<div class="flex flex-col justify-start items-center h-screen">
-  <%= form_with(model: [@category, @transaction], url: category_transactions_path(@category)) do |f| %>
-    <!-- Name field -->
-    <div class="form-group">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-start sm:py-12">
+  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+    <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+      <div class="max-w-md mx-auto">
+        <div class="divide-y divide-gray-200">
+          <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+            <h1 class="text-center font-semibold">Add a New Transaction</h1>
+            <%= form_with(model: [@category, @transaction], url: category_transactions_path(@category)) do |f| %>
+              <% if @transaction.errors.any? %>
+                <div class="alert alert-danger">
+                  <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+                  <ul>
+                    <% @transaction.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+            <!-- Name field -->
+            <div class="relative">
+              <%= f.label :name, class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
+                    peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5
+                    peer-focus:text-gray-600 peer-focus:text-sm' %><br />
+              <%= f.text_field :name, autofocus: true, autocomplete: "email",placeholder: 'Email', class: "peer placeholder-transparent
+                      h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" %>
+            </div>
+            <!-- Amount field -->
+            <div class="relative">
+              <%= f.label :amount, class: "mt-4 absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440
+                         peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm" %><br>
+              <%= f.number_field :amount,class: 'peer placeholder-transparent h-10 w-full border-b-2 border-gray-300
+                         text-gray-900 focus:outline-none focus:borer-rose-600' %>
+            </div>
+            <div class="relative">
+              <%= f.hidden_field :category_id, value: @category.id %>
+            </div>
+            <!-- Category dropdown -->
+            <div class='relative w-full'>
+              <%= f.label :category_id %><br>
+              <%= f.collection_select(:category_id, Category.all, :id, :name ,{ prompt: 'Choose a Category'},{ class: 'form-select '}) %>
+            </div>
+            <div class="relative">
+              <%= f.submit 'Create Transaction', class: 'actions group relative w-full flex
+                  justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
+                  rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
+                  focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500'%>
+            </div>
+          <% end %>
+          <div class="flex justify-center items-center mt-4">
+            <%= link_to "Back", categories_path%>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Amount field -->
-    <div class="form-group">
-      <%= f.label :amount %><br>
-      <%= f.number_field :amount %>
-    </div>
-    <div class="form-group">
-      <%= f.hidden_field :category_id, value: @category.id %>
-    </div>
-    <!-- Category dropdown -->
-    <div class="form-group">
-      <%= f.label :category_id %><br>
-      <%= f.collection_select(:category_id, Category.all, :id, :name ,{ prompt: 'Choose a Category'},{ class: 'form-select w-full'}) %>
-    </div>
-    <div class="flex justify-center items-center">
-      <%= f.submit 'Create Transaction', class: 'actions group relative w-full flex
-          justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
-          rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
-          focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500'%>
-    </div>
-  <% end %>
-  <%= link_to "Back", categories_path%>
+  </div>
 </div>
-
-

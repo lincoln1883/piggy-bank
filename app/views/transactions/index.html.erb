@@ -1,17 +1,21 @@
 <div class="h-full bg-gray-300">
-  <div class="flex justify-evenly bg-white shadow-[0_4px_9px_-4px_#3b71ca]">
+  <div class="flex justify-evenly items-center bg-white shadow-[0_4px_9px_-4px_#3b71ca] h-20">
     <h2 class="text-center font-serif uppercase"><%= @category.name %></h2>
     <p>$<%= @category.total_amount %>0 cents</p>
   </div>
   <!-- container for all cards -->
-  <div id="card" class="flex flex-col items-center mt-8 mb-4">
-    <%= render 'transactions/transaction', collection: @category.transactions %>
-    <% if can? :manage, @category %>
-      <%= link_to "Add a New Transaction", new_category_transaction_path(category_id: @category.id), class: 'actions group relative w-50 flex
+  <div id="card" class="flex flex-col justify-center mt-8 mb-4">
+    <div class="mx-auto">
+      <%= render 'transactions/transaction', collection: @category.transactions %>
+      <% if can? :manage, @category %>
+        <%= link_to "Add a New Transaction", new_category_transaction_path(category_id: @category.id), class: 'actions group relative w-50 flex
          justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
          rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
-         focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500'%>
-    <% end %>
-    <%= link_to "Back", categories_path %>
+         focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500 mr-8 ml-8'%>
+      <% end %>
+      <div class="flex items-center justify-center mt-4">
+        <%= link_to "Back", categories_path%>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @categories = Category.includes(:user, :transactions).all
   end
@@ -13,6 +14,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to categories_path, notice: 'Category created successfully!'
     else
+      flash[:alert] = 'Category could not be saved validation errors'
       render :new
     end
   end

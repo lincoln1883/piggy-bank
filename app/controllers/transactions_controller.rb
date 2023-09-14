@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @category = Category.includes(:user, :transactions).find(params[:category_id])
     @transactions = @category.transactions.order(created_at: :desc).limit(3)
@@ -15,10 +16,11 @@ class TransactionsController < ApplicationController
     @transaction = @category.transactions.new(transaction_params)
     @transaction.user_id = current_user.id
 
-    if @transaction.save!
+    if @transaction.save
       redirect_to categories_path, notice: 'Transaction created successfully.'
     else
-      render action: 'new', unprocessable_entity: @transaction, notice: 'Transaction not created.'
+      flash[:alert] = 'Transaction could not be saved validation errors.'
+      render 'new'
     end
   end
 

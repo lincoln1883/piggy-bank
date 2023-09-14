@@ -1,2 +1,20 @@
-<h1 class="text-center font-medium uppercase text-4xl">Piggy Bank App</h1>
-<p class="text-center font-semibold">Login or sign up from the dropdown menu</p>
+<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+    <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+      <div class="max-w-md mx-auto">
+        <div class="divide-y divide-gray-200">
+          <h1 class="text-center font-bold uppercase italic text-4xl">Piggy Bank App</h1>
+          <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+            <% unless user_signed_in? %>
+              <div class="flex">
+                <%= link_to 'Log In', user_session_path, class: "bg-indigo-900 rounded-lg shadow text-center text-white text-base font-semibold w-full py-3 mt-9" %></div>
+              <div class="flex">
+                <%= link_to 'Sign Up', new_user_registration_path, class: "border border-indigo-900 rounded-lg  text-center text-indigo-900 bg-white text-base font-semibold w-full py-3 mt-9" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
