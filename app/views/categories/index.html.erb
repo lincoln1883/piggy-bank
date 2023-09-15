@@ -1,15 +1,15 @@
 <nav class="bg-white border-gray-200" style="background-color: #3778c2">
   <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
     <%= link_to root_path do %>
-      <i class="fa-solid fa-arrow-left-long fa-2xl" style="color: white"></i>
+      <i class="fa-solid fa-arrow-left-long fa-lg" style="color: white"></i>
     <% end %>
     <div class="">
-      <h2 class="text-2xl font-semibold text-center text-white uppercase">categories</h2>
+      <h2 class="font-semibold text-center text-white uppercase">categories</h2>
     </div>
     <div class="md:block md:w-auto">
       <ul class="font-medium float-right">
         <li>
-          <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: white"></i>
+          <i class="fa-solid fa-magnifying-glass fa-lg" style="color: white"></i>
         </li>
       </ul>
     </div>
@@ -45,8 +45,8 @@
     <% end %>
   <% end %>
 </div>
-<footer class="flex justify-center items-center px-10 py-10" style="background-color: #5fb523">
-  <div class="flex justify-center items-center w-full h-20 border-2 border-slate-200 rounded-md">
-    <%= link_to 'Add a New Category',new_category_path,class: "text-white text-2xl font-semibold"%>
+<footer class="flex justify-center items-center px-10 py-5" style="background-color: #5fb523">
+  <div class="flex justify-center items-center w-full h-10 border-2 border-slate-200 rounded-md">
+    <%= link_to 'Add a new category',new_category_path,class: "text-white text-lg font-semibold"%>
   </div>
 </footer>
