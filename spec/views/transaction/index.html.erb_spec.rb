@@ -22,12 +22,7 @@ RSpec.describe 'transactions/index.html.erb', type: :view do
     sign_in user
     allow(view).to receive(:can?).and_return(true)
     render
-    expect(rendered).to have_link('Add a New Transaction',
+    expect(rendered).to have_link('Add a new transaction',
                                   href: new_category_transaction_path(category_id: category.id))
-  end
-
-  it 'displays a "Back" link to categories' do
-    render
-    expect(rendered).to have_link('Back', href: categories_path)
   end
 end

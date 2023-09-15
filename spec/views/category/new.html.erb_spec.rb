@@ -7,9 +7,6 @@ RSpec.describe 'categories/new', type: :view do
 
   it 'renders the form' do
     render
-
-    expect(rendered).to have_selector('h1', text: 'Add a New Category')
-
     expect(rendered).to have_selector('form') do |form|
       expect(form).to have_selector('label', text: 'Name')
       expect(form).to have_selector('input[type="text"]')
@@ -17,10 +14,8 @@ RSpec.describe 'categories/new', type: :view do
       expect(form).to have_selector('label', text: 'Icon')
       expect(form).to have_selector('input[type="text"]')
 
-      expect(form).to have_selector('input[type="submit"][value="Create Category"]')
+      expect(form).to have_selector('input[type="submit"][value="Save"]')
     end
-
-    expect(rendered).to have_link('Back', href: categories_path)
   end
 
   it 'renders the form with the category object' do

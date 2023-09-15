@@ -1,3 +1,23 @@
+<nav class="bg-white border-gray-200" style="background-color: #3778c2">
+  <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+    <%= link_to categories_path do %>
+      <i class="fa-solid fa-arrow-left-long fa-2xl" style="color: white"></i>
+    <% end %>
+    <div class="">
+      <h2 class="text-2xl font-semibold text-center text-white uppercase">Transactions</h2>
+    </div>
+    <div class="md:block md:w-auto">
+      <ul class="font-medium float-right">
+        <li>
+          <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: white"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="flex justify-center items-center gap-10 py-6 bg-white border-gray-200" style="background-color: #3778c2">
+  <p class="text-center font-semibold" style="color: azure">Most recent</p>
+</div>
 <div class="h-full bg-gray-300">
   <div class="flex justify-evenly items-center bg-white shadow-[0_4px_9px_-4px_#3b71ca] h-20">
     <h2 class="text-center font-serif uppercase"><%= @category.name %></h2>
@@ -5,17 +25,15 @@
   </div>
   <!-- container for all cards -->
   <div id="card" class="flex flex-col justify-center mt-8 mb-4">
-    <div class="mx-auto">
+    <div>
       <%= render 'transactions/transaction', collection: @category.transactions %>
-      <% if can? :manage, @category %>
-        <%= link_to "Add a New Transaction", new_category_transaction_path(category_id: @category.id), class: 'actions group relative w-50 flex
-         justify-center py-2 px-4 border border-transparent mt-4 text-sm font-medium
-         rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor:pointer focus:outline-none
-         focus:ring-2 focus-2 focus-offset-2 focus:ring-indigo-500 mr-8 ml-8'%>
-      <% end %>
-      <div class="flex items-center justify-center mt-4">
-        <%= link_to "Back", categories_path%>
-      </div>
     </div>
   </div>
 </div>
+<footer class="flex justify-center items-center px-5 py-10" style="background-color: #5fb523">
+  <div class="flex justify-center items-center w-full h-20 border-2 border-slate-200 rounded-md">
+    <% if can? :manage, @category %>
+    <%= link_to 'Add a new transaction', new_category_transaction_path(category_id: @category.id),class: "text-white text-2xl font-semibold"%>
+    <% end %>
+  </div>
+</footer>

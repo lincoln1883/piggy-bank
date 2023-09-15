@@ -1,52 +1,59 @@
+<nav class="bg-white border-gray-200" style="background-color: #3778c2">
+  <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left-long fa-2xl" style="color: white"></i>
+    <% end %>
+    <div class="">
+      <h2 class="text-2xl font-semibold text-center text-white uppercase">Registration</h2>
+    </div>
+    <div class="md:block md:w-auto">
+      <ul class="font-medium float-right">
+
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-start sm:py-12">
   <div class="relative py-3 sm:max-w-xl sm:mx-auto">
     <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
       <div class="max-w-md mx-auto">
-        <div>
-          <h2 class="text-2xl text-center font-semibold">Sign Up</h2>
-        </div>
         <div class="divide-y divide-gray-200">
           <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
-              <div class="relative mt-4">
-                <%= f.label :name, class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
+              <div class="relative">
+                <%= f.label :full_name,class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
               peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5
               peer-focus:text-gray-600 peer-focus:text-sm' %><br>
-                <%= f.text_field :name, autofocus: true, autocomplete: 'name', placeholder: 'Enter your name', class: "peer placeholder-transparent
-               h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" %>
+                <%= f.text_field :name, autofocus: true, autocomplete: 'name', placeholder: 'Full Name', class: "peer placeholder-transparent
+               h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600 mb-4" %>
               </div>
-              <div class="relative mt-4">
+              <div class="relative">
                 <%= f.label :email, class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
               peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5
               peer-focus:text-gray-600 peer-focus:text-sm' %><br />
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter your email', class: "peer placeholder-transparent
-               h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" %>
+               h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600 mb-4" %>
               </div>
-              <div class="relative mt-4">
+              <div class="relative">
                 <%= f.label :password, class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
               peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5
-              peer-focus:text-gray-600 peer-focus:text-sm' %>
+              peer-focus:text-gray-600 peer-focus:text-sm mb-4' %>
                 <% if @minimum_password_length %>
                   <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
                 <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Enter your password', class: "peer placeholder-transparent
-              h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" %>
+              h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600 mb-4" %>
               </div>
-              <div class="relative mt-4">
+              <div class="relative">
                 <%= f.label :password_confirmation, class: 'absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base
               peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5
               peer-focus:text-gray-600 peer-focus:text-sm' %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Re-enter your password', class: "peer placeholder-transparent
               h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"%>
               </div>
-              <div class="relative">
-                <%= f.submit "Sign up", class: 'border border-indigo-900 rounded-lg  text-center  text-indigo-900 bg-white text-base font-semibold w-full py-3 mt-9' %>
-              </div>
+              <%= f.submit 'Sign Up',class: "mt-4 border border-indigo-900 rounded-lg text-center text-indigo-900 bg-white text-base font-semibold w-full py-3" %>
             <% end %>
-            <div class="relative mt-4">
-              <%= render "devise/shared/links" %>
-            </div>
           </div>
         </div>
       </div>
