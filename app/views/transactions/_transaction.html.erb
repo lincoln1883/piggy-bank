@@ -1,0 +1,22 @@
+<% @transactions.each do |transaction| %>
+  <div class="flex flex-col">
+    <!-- card -->
+    <div class="flex flex-row overflow-hidden bg-white
+      rounded-lg shadow-xl h-40 mt-4 w-100 mx-2" id="transaction_<%= transaction.id %>">
+      <!-- media -->
+      <div class="h-full w-auto">
+        <%= image_tag @category.icon, alt: 'Category Icon', class: "inset-0 w-full object-cover object-center" if @category.icon.present?%>
+      </div>
+      <!-- content -->
+      <div class="flex flex-col justify-evenly w-full py-4 px-6 text-gray-800">
+        <div class="flex justify-between mt-8">
+          <p class="font-semibold text-lg leading-tight truncate"><%= transaction.name.capitalize %></p>
+          <p class="font-semibold text-lg">$ <%= transaction.amount %>0</p>
+        </div>
+        <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+          <%= time_ago_in_words(transaction.created_at) %>
+        </p>
+      </div>
+     </div>
+  </div>
+<% end %>

@@ -10,6 +10,8 @@
     - [🛠 Built With](#built-with)
         - [Tech Stack](#tech-stack)
         - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [📹 Video Presentation ](#-video-presentation-)
 - [💻 Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -55,10 +57,24 @@ The Piggy Bank project is about building a mobile web application where you can 
 ### Key Features <a name="key-features"></a>
 
 - [ ] Model View and controllers.
-
+- [ ] Add authorization rules.
+- [ ] Creating a data model.
+- [ ] Validations and Model specs.
+- [ ] Processing data in models.
+- [ ] Add Devise.
+- [ ] Controllers specs.
+- [ ] Views.
+- [ ] Forms.
+- [ ] Integration specs for Views and fixing n+1 problems.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- LIVE DEMO -->
 
+### Live Demo <a name = "live-demo"></a>
+[Piggy Bank](https://piggycoin.onrender.com)
+
+### Video Presentation <a name = "video-Presentation"></a>
+[Presentation](https://www.loom.com/share/cc953017d78c41049819a9b6e8b02c44?sid=71dcf0c0-cf5a-45b5-aecb-850581679ddd)
 ## 💻 Getting Started <a name="getting-started"></a>
 
   To get a local copy up and running, follow these steps.
@@ -80,7 +96,7 @@ The Piggy Bank project is about building a mobile web application where you can 
   Clone this repository to your desired folder:
 ```sh
   cd folder
-  git clone git@github.com:lincoln1883/hello-rails.git
+  git clone git@github.com:lincoln1883/piggy-bank.git
 ```
 ### Install
 
@@ -118,19 +134,8 @@ The Piggy Bank project is about building a mobile web application where you can 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
+- [ ] Add Edit and Delete functionality
 
-- [ ] Add authorization rules.
-- [ ] Add API endpoints.
-- [ ] API documentation.
-- [ ] Creating a data model.
-- [ ] Validations and Model specs.
-- [ ] Processing data in models.
-- [ ] Controllers specs.
-- [ ] Views.
-- [ ] Forms.
-- [ ] Integration specs for Views and fixing n+1 problems.
-- [ ] Add Devise.
-- 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -149,7 +154,7 @@ Feel free to check the [issues page](https://github.com/lincoln1883/blog-app/iss
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Thank you Microverse.
+- Original design idea by Gregoire Vella on Behance.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
