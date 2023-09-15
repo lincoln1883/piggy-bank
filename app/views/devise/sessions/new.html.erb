@@ -1,14 +1,14 @@
-<nav class="bg-white border-gray-200 dark:bg-blue-600">
+<nav class="bg-white border-gray-200" style="background-color: #3778c2">
   <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-    <i class="fa-solid fa-arrow-left-long fa-2xl" style="color: white"><%= link_to '', root_path %></i>
-    <div class="">
-      <h2 class="text-2xl font-semibold text-center text-white">Log in</h2>
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left-long fa-2xl" style="color: white"></i>
+    <% end %>
+    <div>
+      <h2 class="text-2xl font-semibold text-center text-white uppercase">Log in</h2>
     </div>
     <div class="md:block md:w-auto">
       <ul class="font-medium float-right">
-          <li>
-            <%= link_to 'Log in', new_user_session_path, class: "block py-2 pl-3 pr-4 text-gray-900 font-2xl rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" %>
-          </li>
+
       </ul>
     </div>
   </div>
@@ -17,7 +17,6 @@
   <div class="relative py-3 sm:max-w-xl sm:mx-auto">
     <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
       <div class="max-w-md mx-auto">
-
         <div class="divide-y divide-gray-200">
           <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -34,6 +33,7 @@
                 <%= f.password_field :password, autocomplete: "current-password",placeholder: 'Password',  class: 'peer placeholder-transparent h-10 w-full border-b-2 border-gray-300
                  text-gray-900 focus:outline-none focus:borer-rose-600'%>
               </div>
+              <%= f.submit 'Log In',class: "mt-4 border border-indigo-900 rounded-lg text-center text-indigo-900 bg-white text-base font-semibold w-full py-3" %>
             <% end %>
             <div class="relative mt-4 flex justify-center">
               <%= render "devise/shared/links" %>
