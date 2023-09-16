@@ -25,7 +25,7 @@ development:
   <<: *default
   database: piggy_bank_development
   username: postgres
-  password: djfyahlinks2
+  password:
   host: localhost
   port: 5432
   # The specified database role being used to connect to postgres.
@@ -62,7 +62,7 @@ test:
   <<: *default
   database: piggy_bank_test
   username: postgres
-  password: djfyahlinks2
+  password:
   host: localhost
   port: 5432
 
