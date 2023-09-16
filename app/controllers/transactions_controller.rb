@@ -24,6 +24,12 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:category_id])
+    @transaction = @category.transactions.find(params[:id])
+    @transaction.destroy
+  end
+
   private
 
   def transaction_params

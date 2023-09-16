@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :categories do
-    resources :transactions, only: [:create, :new, :index]
+    resources :transactions, only: [:create, :new, :index, :destroy]
   end
 end
