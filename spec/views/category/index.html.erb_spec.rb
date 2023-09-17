@@ -11,6 +11,6 @@ RSpec.describe 'categories/index.html.erb', type: :view do
   end
 
   it 'displays "Add a New Category" link' do
-    expect(rendered).to have_link('Add a New Category', count: 1)
+    expect(rendered).to have_link('Add a new category', count: 1)
   end
 end
